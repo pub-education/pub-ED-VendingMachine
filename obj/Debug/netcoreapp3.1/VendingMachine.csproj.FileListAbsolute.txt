@@ -1,0 +1,13 @@
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.exe
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.deps.json
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.runtimeconfig.json
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.runtimeconfig.dev.json
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.dll
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.pdb
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.AssemblyInfoInputs.cache
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.AssemblyInfo.cs
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.csproj.CoreCompileInputs.cache
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.dll
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.pdb
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.genruntimeconfig.cache
+F:\Education\Lexicon\Programmering .NET\Inlämningsuppgifter\01 CSharp\VendingMachine1\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.csprojAssemblyReference.cache
