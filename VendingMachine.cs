@@ -50,7 +50,7 @@ namespace VendingMachine
                 Console.ResetColor();
                 Console.Write(" left to buy for.");
                 Console.WriteLine("\n\n\tEnter 'B' before product number to buy the product.\n\tEnter 'I' before the product number to display information about the product.");
-                Console.Write("\tChose your product or \n\tEnter 'D' to deposit more funds.\n\tEnter 'P' to print the product list.\n\tEnter 'X' to exit the Vending Machine: ");
+                Console.Write("\tChose your product or \n\tEnter 'D' to deposit more funds.\n\tEnter 'P' to print the product list.\n\tEnter 'R' to return cash.\n\tEnter 'X' to exit the Vending Machine: ");
                 select = Console.ReadLine();
                 try
                 {
@@ -79,6 +79,10 @@ namespace VendingMachine
                     else if (select.ToLower().Contains('p'))
                     {
                         DisplayGoods();
+                    }
+                    else if (select.ToLower().Contains('r'))
+                    {
+                        ReturnDeposit();
                     }
                     else if (select.ToLower().Contains('x'))
                     {
@@ -269,7 +273,7 @@ namespace VendingMachine
                 Console.WriteLine("\n\tYou have the following funds available for purchases.\n\tYou can only use the denominations that are available to a maximum of the available quantity.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n\tDenomination\tQuantity\tAmount");
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.ResetColor();
                 foreach (int key in this._customer.GetWallet.CashBoxDrawer.Keys)
                 {
                     Console.WriteLine("\t" + key.ToString() + "kr\t\t" + this._customer.GetWallet.CashBoxDrawer[key] + "\t\t" + this._customer.GetDenominationAmount(key).ToString() + "kr");
@@ -365,6 +369,37 @@ namespace VendingMachine
                 throw new ProductNotAvailableException("The requested product is unfortunately sold out.");
             }
         }
+
+        public void ReturnDeposit()
+        {
+            int sum = 0;
+            try
+            {
+                Cash[] change = this._account.WithdrawCash(this._account.AvailableAmount);
+                this._customer.GetWallet.DepositCash(change);
+
+                foreach(Cash x in change)
+                {
+                    sum += x.Amount();
+                }
+                this._account.AvailableAmount -= sum;
+            }
+            catch(CannotProvideChangeException ex)
+            {
+                Console.WriteLine("\n\tThe machine cannot give back exact change.\n\t" + ex.Message);
+            }
+
+            Console.WriteLine("\n\tThere is " + this._account.AvailableAmount + "kr available for purchase.");
+
+            Console.WriteLine("\n\tYou have " + this._customer.GetWallet.GetTotalAmountString() + " in total.");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\tDenomination\tQuantity\tAmount");
+            Console.ResetColor();
+            foreach (int key in this._customer.GetWallet.CashBoxDrawer.Keys)
+            {
+                Console.WriteLine("\t" + key.ToString() + "kr\t\t" + this._customer.GetWallet.CashBoxDrawer[key] + "\t\t" + this._customer.GetDenominationAmount(key).ToString() + "kr");
+            }
+        }
     }
 
 
@@ -385,6 +420,11 @@ namespace VendingMachine
         /// Enables customer to deposit cash into the machine to purchase good.
         /// </summary>
         public void DepositCash();
+
+        /// <summary>
+        /// Returns the unused funds to the customer.
+        /// </summary>
+        public void ReturnDeposit();
 
         /// <summary>
         /// Simulates the actual buying of the product.

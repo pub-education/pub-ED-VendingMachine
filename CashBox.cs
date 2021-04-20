@@ -79,7 +79,7 @@ namespace VendingMachine
                 {
                     for (int i = this.DenominationValues.Length - 1; i > -1; i--)
                     {
-                        tmp = amount / this.DenominationValues[i];
+                        tmp = (double)amount / this.DenominationValues[i];
                         if (tmp >= 1.0)
                         {
                             _quantity = Convert.ToInt32(Math.Truncate(tmp));
