@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace VendingMachine
@@ -113,7 +112,7 @@ namespace VendingMachine
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.BackgroundColor = ConsoleColor.White;
-                    Console.WriteLine("\n\t"+ex.Message);
+                    Console.WriteLine("\n\t" + ex.Message);
                     Console.ResetColor();
                 }
 
@@ -312,15 +311,15 @@ namespace VendingMachine
                     Console.Write(denomination);
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
                     Console.Write(" is not a valid denomination. \n\tAvailable denominations are:\n\t");
-                    for(int i =0;i<this._account.Denominations.Length;i++)
+                    for (int i = 0; i < this._account.Denominations.Length; i++)
                     {
-                        if(i == this._account.Denominations.Length - 1)
+                        if (i == this._account.Denominations.Length - 1)
                         {
                             Console.Write(this._account.Denominations[i]);
                         }
-                        else if(i == this._account.Denominations.Length - 2)
+                        else if (i == this._account.Denominations.Length - 2)
                         {
-                            Console.Write(this._account.Denominations[i]+" and ");
+                            Console.Write(this._account.Denominations[i] + " and ");
                         }
                         else
                         {
@@ -378,13 +377,13 @@ namespace VendingMachine
                 Cash[] change = this._account.WithdrawCash(this._account.AvailableAmount);
                 this._customer.GetWallet.DepositCash(change);
 
-                foreach(Cash x in change)
+                foreach (Cash x in change)
                 {
                     sum += x.Amount();
                 }
                 this._account.AvailableAmount -= sum;
             }
-            catch(CannotProvideChangeException ex)
+            catch (CannotProvideChangeException ex)
             {
                 Console.WriteLine("\n\tThe machine cannot give back exact change.\n\t" + ex.Message);
             }

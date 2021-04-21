@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VendingMachine
 {
@@ -29,7 +27,7 @@ namespace VendingMachine
 
         public override string Consume
         {
-            get { return  ProductName + " is my favorite snack and it tasted awsome! Yummy!"; }
+            get { return ProductName + " is my favorite snack and it tasted awsome! Yummy!"; }
         }
 
         public override string ProductDescription { get; set; }

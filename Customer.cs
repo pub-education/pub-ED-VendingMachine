@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace VendingMachine
 {
@@ -48,9 +47,9 @@ namespace VendingMachine
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n\tIndex\tProduct Name");
                 Console.ResetColor();
-                for(int i = 0; i < this._products.Count; i++)
+                for (int i = 0; i < this._products.Count; i++)
                 {
-                    Console.WriteLine("\t" + i.ToString() + "\t"+this._products[i].ProductName);
+                    Console.WriteLine("\t" + i.ToString() + "\t" + this._products[i].ProductName);
                 }
                 Console.Write("\n\tTo consume a product enter 'C' and the index for the item you want to consume..\n\tTo get information about a product enter 'I' and the index for your choice.\n\tTo stop consuming enter 'X': ");
                 select = Console.ReadLine();
@@ -108,7 +107,7 @@ namespace VendingMachine
         {
             get { return this._products.Count; }
         }
-            
+
     }
 
     public class Wallet : CashBox
